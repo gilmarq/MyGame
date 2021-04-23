@@ -10,6 +10,11 @@ import UIKit
 
 class GameTableViewCell: UITableViewCell {
 
+    //MARK: - outlet
+    @IBOutlet weak var ivCapa: UIImageView!
+    @IBOutlet weak var lbGame: UILabel!
+    @IBOutlet weak var lbConsole: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

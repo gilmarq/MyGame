@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6oP-cV-l0J">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,13 +12,13 @@
         <!--Lista de jogos-->
         <scene sceneID="xlK-3Y-A0m">
             <objects>
-                <tableViewController id="cl2-1T-VWU" customClass="GamesTableViewController" customModule="MyGame" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EGK-rg-f5d">
+                <tableViewController id="cl2-1T-VWU" customClass="GameTableViewController" customModule="MyGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EGK-rg-f5d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="DWb-ia-d7f" customClass="Game">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="DWb-ia-d7f" customClass="GameTableViewCell" customModule="MyGame" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DWb-ia-d7f" id="lSW-Z0-DGb" customClass="GameCollectionViewCell" customModule="MyGame" customModuleProvider="target">
@@ -61,6 +61,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="ivCapa" destination="bai-Rg-0PC" id="r75-B2-2ew"/>
+                                    <outlet property="lbConsole" destination="xLM-87-uJt" id="yjE-Sg-roq"/>
+                                    <outlet property="lbGame" destination="6m8-4j-VGd" id="sc5-wj-lQX"/>
                                     <segue destination="FcO-hZ-VgO" kind="show" id="h7y-TP-5j7"/>
                                 </connections>
                             </tableViewCell>
@@ -86,20 +89,20 @@
         <scene sceneID="9JC-5g-ORW">
             <objects>
                 <tableViewController id="BDm-3F-3M8" customClass="ConsolesTableViewController" customModule="MyGame" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KG8-XI-O80">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KG8-XI-O80">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="8Dj-BE-qgX" style="IBUITableViewCellStyleDefault" id="dqT-XS-96n">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dqT-XS-96n" id="6K0-H1-rFt">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Dj-BE-qgX">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="374" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -114,7 +117,13 @@
                             <outlet property="delegate" destination="BDm-3F-3M8" id="DAs-yQ-iBL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Lista de Plataforma" id="HoB-b5-6aG"/>
+                    <navigationItem key="navigationItem" title="Lista de Plataforma" id="HoB-b5-6aG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DbP-5w-LzD">
+                            <connections>
+                                <action selector="addConsole:" destination="BDm-3F-3M8" id="iko-bH-UWe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqX-SV-EPD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -215,12 +224,20 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="rpL-NJ-x8r">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="sTg-jh-yD4">
                             <connections>
+                                <action selector="edit:" destination="kpS-jX-vz3" id="iKu-N7-Jwn"/>
                                 <segue destination="3h9-BL-8k6" kind="show" id="ju2-Nz-kEx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ivcover" destination="kTv-Of-Lya" id="gfQ-ta-JPc"/>
+                        <outlet property="lbConsole" destination="jcK-Ly-Wpu" id="Oyv-1i-2nN"/>
+                        <outlet property="lbReleseDate" destination="KH1-fR-GhM" id="cx4-Hv-30o"/>
+                        <outlet property="lbtitle" destination="ZFp-gd-7KJ" id="omK-i3-bfC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGV-QH-DD0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="kpS-jX-vz3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1179.7101449275362" y="450.66964285714283"/>
         </scene>
@@ -276,6 +293,9 @@
                                 <state key="normal" title="Adicionar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addEditGame:" destination="3h9-BL-8k6" eventType="touchUpInside" id="mXf-Jp-CsA"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0wD-n7-lLa">
                                 <rect key="frame" x="16" y="370" width="382" height="367"/>
@@ -283,6 +303,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVn-YF-rYP">
                                 <rect key="frame" x="16" y="370" width="382" height="367"/>
                                 <state key="normal" title="toque para adicionar a capa"/>
+                                <connections>
+                                    <action selector="addEditCover:" destination="3h9-BL-8k6" eventType="touchUpInside" id="7gr-FU-bMc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -317,6 +340,14 @@
                         <viewLayoutGuide key="safeArea" id="Mpz-5R-Nc6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="never" id="tdm-fX-Yq7"/>
+                    <connections>
+                        <outlet property="addEdit" destination="AUF-sc-6bH" id="mDb-K4-4DZ"/>
+                        <outlet property="addEditCover" destination="QVn-YF-rYP" id="gOx-tU-oas"/>
+                        <outlet property="dpReleseDate" destination="Qj1-z6-jg0" id="seg-bC-mgi"/>
+                        <outlet property="ivCover" destination="0wD-n7-lLa" id="3cj-ES-pJ2"/>
+                        <outlet property="tfConsole" destination="dmO-Tj-Gue" id="e7v-GO-Mbh"/>
+                        <outlet property="tfTitle" destination="tiA-26-TWS" id="ylY-rc-sxZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQw-S1-PJN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -328,6 +359,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6oP-cV-l0J" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m1W-br-6Cp">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -343,7 +375,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nLq-nj-NCx"/>
+        <segue reference="ju2-Nz-kEx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="console" width="23" height="23"/>
