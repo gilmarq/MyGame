@@ -20,12 +20,24 @@ class AddEditViewController: UIViewController {
 
     //MARK: - variable
     var game: Game!
+    let consoleManage = ConsoleManeger.shared
+    lazy var pickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        return pickerView
+    }()
 
     //MARK: = life cyclo
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        consoleManage.loadConsole(with: context)
+        tfConsole.inputView = pickerView
     }
 
     //MARK: -action
@@ -58,5 +70,25 @@ class AddEditViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+
+}
+
+extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+
+        return consoleManage.consoles.count
+    }
+
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+     return 1
+
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let console = consoleManage.consoles[row]
+        return console.nome
+    }
+
 
 }
