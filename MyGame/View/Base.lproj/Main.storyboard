@@ -64,7 +64,7 @@
                                     <outlet property="ivCapa" destination="bai-Rg-0PC" id="r75-B2-2ew"/>
                                     <outlet property="lbConsole" destination="xLM-87-uJt" id="yjE-Sg-roq"/>
                                     <outlet property="lbGame" destination="6m8-4j-VGd" id="sc5-wj-lQX"/>
-                                    <segue destination="FcO-hZ-VgO" kind="show" id="h7y-TP-5j7"/>
+                                    <segue destination="FcO-hZ-VgO" kind="show" identifier="gameSegue" id="h7y-TP-5j7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -76,7 +76,7 @@
                     <navigationItem key="navigationItem" title="Lista de jogos" id="nQQ-FB-DhD">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="REt-cX-CtT">
                             <connections>
-                                <segue destination="3h9-BL-8k6" kind="show" id="nLq-nj-NCx"/>
+                                <segue destination="3h9-BL-8k6" kind="show" identifier="newGameSegue" id="nLq-nj-NCx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

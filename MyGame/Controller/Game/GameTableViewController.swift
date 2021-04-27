@@ -42,6 +42,16 @@ class GameTableViewController: UITableViewController {
         }
 
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier! == "gameSegue" {
+            let vc =  segue.destination as! GameViewController
+
+            if let games = fetchedResultsController.fetchedObjects {
+                vc.game = games[tableView.indexPathForSelectedRow!.row]
+            }
+        }
+    }
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
