@@ -32,17 +32,15 @@ class AddEditViewController: UIViewController {
     //MARK: = life cyclo
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         consoleManage.loadConsole(with: context)
         setupTextField()
-
     }
-    //MARK: - methods
 
+    //MARK: - methods
     func setupTextField() {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
         toolbar.tintColor = UIColor(named: "main")
@@ -63,10 +61,6 @@ class AddEditViewController: UIViewController {
         imagePicker.delegate = self
         imagePicker.navigationBar.tintColor = UIColor(named: "main")
         present(imagePicker, animated: true,completion: nil)
-
-
-
-
     }
 
 
@@ -77,7 +71,6 @@ class AddEditViewController: UIViewController {
     @objc func done() {
         tfConsole.text = consoleManage.consoles[pickerView.selectedRow(inComponent: 0)].nome
         cancel()
-
     }
 
     //MARK: -action
@@ -101,7 +94,6 @@ class AddEditViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler:nil)
         alert.addAction(cancelAction)
         present(alert,animated: true, completion: nil)
-
     }
 
     @IBAction func addEditGame(_ sender: Any) {
@@ -125,19 +117,6 @@ class AddEditViewController: UIViewController {
         }
         navigationController?.popViewController(animated: true)
     }
-
-
-
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-
 }
 
 extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -149,7 +128,6 @@ extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
-
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -166,5 +144,4 @@ extension AddEditViewController: UIImagePickerControllerDelegate,UINavigationCon
         addEditCover.setTitle(nil, for: .normal)
         dismiss(animated: true, completion: nil)
     }
-
 }
