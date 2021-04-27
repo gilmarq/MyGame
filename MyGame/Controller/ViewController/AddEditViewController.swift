@@ -38,6 +38,7 @@ class AddEditViewController: UIViewController {
         super.viewWillAppear(animated)
         consoleManage.loadConsole(with: context)
         setupTextField()
+        setupViewGame()
     }
 
     //MARK: - methods
@@ -50,9 +51,27 @@ class AddEditViewController: UIViewController {
         //btFexbleSpace de espaço entre os botões
         let btFexbleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action:nil)
         toolbar.items = [btCancel, btFexbleSpace, btDone]
-
         tfConsole.inputView = pickerView
         tfConsole.inputAccessoryView = toolbar
+    }
+
+    func setupViewGame() {
+        if game != nil {
+            title = "Editar jogos"
+            addEdit.setTitle("ALTERAR", for: .normal)
+            tfTitle.text = game.title
+            if let console = game.console, let index = consoleManage.consoles.index(of: console){
+                tfConsole.text = console.nome
+                pickerView.selectRow(index, inComponent: 0, animated: false)
+            }
+            ivCover.image = game.cover as? UIImage
+            if let releseData = game.releseDate {
+                dpReleseDate.date = releseData
+            }
+            if game.cover != nil {
+                addEditCover.setTitle(nil, for: .normal)
+            }
+        }
     }
 
     func selectPicture(sourceType: UIImagePickerController.SourceType) {

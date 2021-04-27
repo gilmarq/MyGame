@@ -36,6 +36,7 @@ class ConsoleManeger  {
     func deleteConsole(index:Int , context: NSManagedObjectContext) {
         let console = consoles[index]
         context.delete(console)
+        consoles.remove(at: index)
         do {
             try context.save()
         } catch {

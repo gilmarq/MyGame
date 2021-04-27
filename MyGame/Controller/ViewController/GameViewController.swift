@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
     //MARK:- life cyclo
     override func viewDidLoad() {
         super.viewDidLoad()
-
+     loadRequest()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +45,7 @@ class GameViewController: UIViewController {
         if let image = game.cover as? UIImage {
             ivcover.image = image
         } else {
-            ivcover.image = UIImage(named: "noCovFull")
+            ivcover.image = UIImage(named: "noCoverFull")
         }
     }
 
