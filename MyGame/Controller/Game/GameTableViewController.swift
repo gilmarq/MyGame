@@ -61,14 +61,19 @@ class GameTableViewController: UITableViewController {
         return count
     }
 
-
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameTableViewCell
         guard let game = fetchedResultsController.fetchedObjects?[indexPath.row] else { return cell }
         cell.prepare(with: game)
      return cell
      }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+        guard let game = fetchedResultsController.fetchedObjects?[indexPath.row] else { return }
+        context.delete(game)
+    }
+    }
 
 
     /*
@@ -80,15 +85,7 @@ class GameTableViewController: UITableViewController {
      */
 
     /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
+
      */
 
     /*
@@ -124,6 +121,9 @@ extension GameTableViewController: NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
             case .delete:
+                if let indexPath = indexPath {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
                 break
             default:
                 tableView.reloadData() 
