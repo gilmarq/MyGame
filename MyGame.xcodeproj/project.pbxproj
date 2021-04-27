@@ -18,6 +18,7 @@
 		7C63CC4726321CDA00560823 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C63CC4626321CDA00560823 /* GameTableViewCell.swift */; };
 		7C63CC492632769900560823 /* GameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C63CC482632769900560823 /* GameTableViewController.swift */; };
 		7C63CC542633887600560823 /* ViewControlller+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C63CC532633887600560823 /* ViewControlller+extension.swift */; };
+		7C76525626376D40006D1C34 /* ConsoleManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C76525526376D40006D1C34 /* ConsoleManeger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7C63CC4626321CDA00560823 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		7C63CC482632769900560823 /* GameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewController.swift; sourceTree = "<group>"; };
 		7C63CC532633887600560823 /* ViewControlller+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControlller+extension.swift"; sourceTree = "<group>"; };
+		7C76525526376D40006D1C34 /* ConsoleManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleManeger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				7C63CC39263213E400560823 /* ConsolesTableViewController.swift */,
+				7C76525526376D40006D1C34 /* ConsoleManeger.swift */,
 			);
 			path = Console;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				7C63CC222631F3AF00560823 /* GameViewController.swift in Sources */,
 				7C63CC3C263214CC00560823 /* AddEditViewController.swift in Sources */,
 				7C63CC1E2631F3AF00560823 /* AppDelegate.swift in Sources */,
+				7C76525626376D40006D1C34 /* ConsoleManeger.swift in Sources */,
 				7C63CC282631F3AF00560823 /* MyGame.xcdatamodeld in Sources */,
 				7C63CC542633887600560823 /* ViewControlller+extension.swift in Sources */,
 				7C63CC3A263213E400560823 /* ConsolesTableViewController.swift in Sources */,
